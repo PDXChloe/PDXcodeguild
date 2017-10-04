@@ -13,3 +13,15 @@ the 'sting builder pattern'
 Version 2
 
 Allow the user to enter the value of n, remember to convert its type, as input returns a string.'''
+
+import random
+
+password_selection = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?><"
+password_length = 10
+my_password = ""
+
+for i in range(password_length):
+    pwd_metric = random.randrange(len(password_selection))
+    my_password = my_password + password_selection[pwd_metric]
+
+print(my_password)
