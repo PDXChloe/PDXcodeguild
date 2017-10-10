@@ -11,3 +11,10 @@ def reverse(nums):
     print(rev_list)
 
 reverse([1,2,3,4,5,6])
+
+def reverse(nums):
+    rev_nums = []
+
+def reverse_v2(nums):
+    for i in range(len(nums) // 2):
+        j = len(nums) - i - 1
