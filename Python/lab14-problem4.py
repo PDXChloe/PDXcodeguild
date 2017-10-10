@@ -17,3 +17,6 @@ def random_element(a):
 
 
 
+# def random_element(a):
+#     index = random.randint(0, len(a)-1)
+#     return a[index]
