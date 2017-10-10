@@ -30,33 +30,34 @@
 #
 # The ROI (return on investment) is defined as (earnings - expenses)/expenses.
 # Calculate your ROI, print it out along with your earnings and expenses.
-
 import random
 
 
-def pick6():
-    # return a list of 6 random numbers
+def pick6(): # return a list of 6 random numbers
     ticket = []
     for i in range(6):
         ticket.append(random.randint(1,99))
-    print(ticket)
     return ticket
 
 winning_numbers = pick6()
-print("winning numbers: " + str(winning_numbers))
+#print("winning numbers: " + str(winning_numbers))
 balance = 0
-
 for i in range(100):
     user_ticket = pick6()
-    balance -=2
-    print(balance)
-    common_nums = []
+    balance -= 2
+    #print(balance)
+    common_nums = 0
     for i in range(len(winning_numbers)):
-        if winning_numbers == user_ticket:
-            common_nums.append()
-            print(common_nums)
+        if winning_numbers[i] == user_ticket[i]:
+            common_nums += 1
+    print(common_nums)
 
+    prizes = [0, 4, 7, 100, 50000, 1000000, 25000000]
 
+    # for i in common_nums:
+    #     if common_nums == prizes[i]:
+    #         balance += i
+    #         print(balance)
 
     # compare ticket and winning numbers
 
