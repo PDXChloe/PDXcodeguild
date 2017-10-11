@@ -30,28 +30,28 @@ def max_nums(nums_list):
 
 def mean_nums(nums_list):
     the_av = sum(nums_list)/(len(nums_list))
-    print(the_av)
+    return the_av
 
 
+if __name__ == 'main':
 
+    nums_list = []
+    user_reply = ""
 
-nums_list = []
-user_reply = ""
-
-while True:        #creating a user list of values to be put through the different functions
-    user_reply = input("Enter a number, or 'done'\n")
-    if user_reply == 'done':
+    while True:        #creating a user list of values to be put through the different functions
+        user_reply = input("Enter a number, or 'done'\n")
+        if user_reply == 'done':
+            print(nums_list)
+            break
+        nums_list.append(int(user_reply))
         print(nums_list)
-        break
-    nums_list.append(int(user_reply))
-    print(nums_list)
 
-print("Here is the mean of all your numbers:")
-mean_nums(nums_list)
-print("Here is the maximum of yor list of numbers:")
-max_nums(nums_list)
-print("Here is the minumum of your list of numbers:")
-min_nums(nums_list)
+    print("Here is the mean of all your numbers:")
+    mean_nums(nums_list)
+    print("Here is the maximum of yor list of numbers:")
+    max_nums(nums_list)
+    print("Here is the minumum of your list of numbers:")
+    min_nums(nums_list)
 
 
 #Nick gift
