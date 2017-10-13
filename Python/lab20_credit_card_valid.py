@@ -48,6 +48,7 @@ def odd_double(new_list):
         new_list[i] *= 2#find every other index and then double that value within that index.
     return new_list
 odd_double(new_list)
+
 print(new_list)
 
 def subtract_nine(new_list):#subtract 9 from numbers over 9.
