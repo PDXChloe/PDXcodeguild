@@ -33,7 +33,7 @@ def ari_score(c, w, sen):
     return ceil(s) #math import to get the ceiling of the float
 
 score = ari_score(char_count, word_count, sentence_count)
-print("ari score is: "+ str(score))
+#print("ari score is: "+ str(score))
 
 ari_scale = {
     1: {'ages': '5-6', 'grade_level': 'Kindergarten'},
