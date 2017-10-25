@@ -1,5 +1,6 @@
 import random
 import datetime
+import matplotlib.pyplot as plt
 
 class RainDataRow:
 
@@ -9,7 +10,6 @@ class RainDataRow:
 
     def __str__(self):
         return str(self.date) + ' ' + str(self.daily_total)
-
 
 
 data = []
@@ -42,11 +42,25 @@ def variance(data, av):
     total = 0
     for x in data:
         diff = x.daily_total - av
-        total += diff * diff
-    var = total / len(data)
+        total += (diff * diff)
+    var = total / (len(data))
     return var
 
 
 av = average(data)
 print(av)
 print(variance(data, av))
+
+x_values = []
+y_values = []
+
+for data_row in data:
+    if data_row.date.year == 2012:
+        x_values.append(data_row.date)
+        y_values.append(data_row.daily_total)
+
+
+plt.plot(x_values, y_values, 'ro')
+
+
+plt.show()
