@@ -10,19 +10,7 @@ class RainDataRow:
     def __str__(self):
         return str(self.date) + ' ' + str(self.daily_total)
 
-    def average(self, daily_total):
-        total = 0
-        for d in daily_total:
-            total += d
-            return total/len(daily_total)
 
-    def variance(self, nums, average):
-        total = 0
-        for num in self.nums:
-            diff = num - self.average
-            total += diff * diff
-
-        return total/len(nums)
 
 data = []
 with open('sauvies_island.rain.txt', 'r') as file:
@@ -41,26 +29,24 @@ with open('sauvies_island.rain.txt', 'r') as file:
 for data_row in data:
     print(data_row)
 
-print(rain_data_row.average(daily_total))
-# nums = []
-# for i in range(100):
-#     nums.append(random.randint(0, 100))
-#
-#
-# def average(nums):
-#     total = 0
-#     for num in nums:
-#         total += num
-#         return total/len(num)
-#
-# def variance(nums, average):
-#     total = 0
-#     for num in nums:
-#         diff = num - average
-#         total += diff*diff
-#
-#     return total/len(nums)
-#
-# av = average(nums)
-# var = variance(nums, av)
-# std = math.sqrt(var)
+
+def average(data):
+    total = 0
+    for x in data:
+        total += x.daily_total
+    av = total / len(data)
+    return av
+
+
+def variance(data, av):
+    total = 0
+    for x in data:
+        diff = x.daily_total - av
+        total += diff * diff
+    var = total / len(data)
+    return var
+
+
+av = average(data)
+print(av)
+print(variance(data, av))
