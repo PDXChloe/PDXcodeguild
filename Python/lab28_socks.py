@@ -2,12 +2,15 @@
 
 import random
 sock_types = ['ankle', 'crew', 'calf', 'thigh']
+sock_colors = ['purple', 'orange', 'rainbow']
+
 list_socks = []
 
 #generate a list of 100 random socks
 for i in range(100):
     choose_sock = random.choice(sock_types)
-    list_socks.append(choose_sock)
+    choose_color = random.choice(sock_colors)
+    list_socks.append((choose_sock, choose_color))
 print(list_socks)
 
 
@@ -25,11 +28,12 @@ for sock in sock_pairs:
 
 
     if amt_pairs%1 == 0:
-        print(f'There are {int(amt_pairs)} pairs of socks')
+        print(f'There are {int(amt_pairs)} pairs of {sock} socks')
     else:
-        print(f'There are {int(amt_pairs)} and there is one loner sock')
+        print(f'There are {int(amt_pairs)} pairs and there is one loner {sock} sock')
 
 #do version 2
+
 
 
 #find the number of duplicates and loner socks for each sock type
