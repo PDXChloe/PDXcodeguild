@@ -72,7 +72,7 @@ while True:
 
     elif command == 'delete' or command == 'd':
         who_for = input('Enter the first name of the contact you wish to delete. >>> ')
-        for i in range(len(contacts)): #need to adjust the range here ???? - deleting the first contact causes errors
+        for contacts[i] in contacts: #need to adjust the range here ???? - deleting the first contact causes errors
             if who_for == contacts[i]['first name']:
                 assurance = input('Are you sure you want to permanently delete ' + str(
                     contacts[i]['first name']) + ' from database? "Y" or "N"')
