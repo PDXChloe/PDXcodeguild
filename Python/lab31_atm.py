@@ -2,7 +2,7 @@
 class AtmAccount:
 
     def __init__(self, balance=0, interest_rate=0.001):
-        self.balance = balance
+        self.balance = balance #set this variable to itself and then set the def__init__ variable to default amount.
         self.interest_rate = interest_rate
         self.transactions = []
         #print("account balance: $" + str(balance))
