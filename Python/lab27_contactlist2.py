@@ -33,7 +33,6 @@ contacts = [] #the main list the individual dictionaries are stored in.
 
 
 
-
 while True:
     command = input('What is your command? "find" or "f", "quit" or "q", "create" or "c", "delete" or "d".').lower()
     if command == 'quit' or command == 'q':
@@ -72,17 +71,17 @@ while True:
 
     elif command == 'delete' or command == 'd':
         who_for = input('Enter the first name of the contact you wish to delete. >>> ')
-        for contacts[i] in contacts: #need to adjust the range here ???? - deleting the first contact causes errors
-            if who_for == contacts[i]['first name']:
+        for contact in contacts:
+            if who_for == contact['first name']:
                 assurance = input('Are you sure you want to permanently delete ' + str(
-                    contacts[i]['first name']) + ' from database? "Y" or "N"')
+                    contact['first name']) + ' from database? "Y" or "N"')
                 if assurance == "Y" or assurance == "y":
-                    del contacts[i]
+                    contacts.remove(contact)
                     print('Contact has been deleted')
                     print(contacts)
+                    break
                 if assurance == 'N' or assurance == 'n':
                     break
-
 
     else:
         print('Command not recognized. Please enter "create" or "done".').lower()
