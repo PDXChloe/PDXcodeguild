@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Converter</title>
+    <script>
+        let meter_convert = {ft:0.3048, mi:1609.34, m:1, km:1000, yd:0.9144, inch:0.254};
+
+
+        let distance = parseFloat(prompt('What is the distance'));
+        let in_unit_type = prompt('What type of input unit (ft, mi, m, km, yd, inch)?');
+        let out_unit_type = prompt('What type of output unit (ft, mi, m, km, yd, inch)?');
+
+        let final_distance = (meter_convert[in_unit_type] * distance/meter_convert[out_unit_type]);
+        alert(distance + in_unit_type + ' is ' + final_distance + out_unit_type);
+
+        console.log(meter_convert.ft);
+        console.log(meter_convert['ft']);
+
+
+
+
+    </script>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+</body>
+</html>
