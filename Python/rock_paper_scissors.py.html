@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <script>
+        function random_element(array) {
+	        let random_index = Math.floor(Math.random()*array.length);
+	        return array[random_index];
+        }
+
+        let gamePieces = ['rock', 'paper', 'scissors'];
+        let computerChoice = random_element(gamePieces);
+
+        alert('Welcome to Paper, Rock Scissors game.');
+        name = prompt('What is your name?');
+        player = prompt(name + ', please enter your choice of either "rock", "paper" or "scissors".');
+        alert('I choose ' + computerChoice);
+
+        if (computerChoice === player) {
+            alert('Argh, we both win...');
+        }
+
+        else if ((computerChoice === gamePieces[0]) && (player ===  gamePieces[1])) {
+            alert('Paper covers rock, ' + name + ' wins!');
+        }
+
+        else if ((computerChoice === gamePieces[0]) && (player === gamePieces[2])) {
+            alert('Rock crushes scissors, you lose!');
+        }
+
+        else if ((computerChoice === gamePieces[1]) && (player === gamePieces[0])) {
+            alert('Paper covers rock, you lose');
+        }
+
+        else if ((computerChoice === gamePieces[1]) && (player === gamePieces[2])) {
+            alert('Scissors cut paper ' + name + ' wins!');
+        }
+
+        else if ((computerChoice === gamePieces[2]) && (player === gamePieces[0])) {
+            alert('Rock crushes scissors ' + name + ' wins!')
+        }
+
+        else if ((computerChoice === gamePieces[2]) && (player === gamePieces[1])) {
+            alert('Scissors cut paper, you lose!')
+        }
+
+
+
+
+
+    </script>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+</body>
+</html>
