@@ -3,29 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Unit Converter</title>
-    <script>
-        let meter_convert = {ft:0.3048, mi:1609.34, m:1, km:1000, yd:0.9144, inch:0.254};
 
-
-        let distance = parseFloat(prompt('What is the distance'));
-        let in_unit_type = prompt('What type of input unit (ft, mi, m, km, yd, inch)?');
-        let out_unit_type = prompt('What type of output unit (ft, mi, m, km, yd, inch)?');
-
-        let final_distance = (meter_convert[in_unit_type] * distance/meter_convert[out_unit_type]);
-        alert(distance + in_unit_type + ' is ' + final_distance + out_unit_type);
-
-        console.log(meter_convert.ft);
-        console.log(meter_convert['ft']);
-
-
-
-
-    </script>
     <meta name="description" content="">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="unitconstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div id="wrapper" class="wrapper">
+        <header>
+            <h1>measurement converter</h1>
+            <h3>Convert inches, feet, yards, miles, meters and kilometers into each other!</h3>
+        </header>
+
+        <div id="the_what" class="the_what">
+            <h3>Enter a distance<h3>
+            <input id="the_distance" class="info" type="text" placeholder="Enter distance here"/>
+        </div>
+
+        <div id="in_unit">
+            <h3>Enter unit of measurement to be converted:</h3>
+            <input name="unit_in" type="radio" value="ft" checked>Feet
+            <input name="unit_in" type="radio" value="mi">Miles
+            <input name="unit_in" type="radio" value="yd">Yards
+            <input name="unit_in" type="radio" value="inch">Inches
+            <input name="unit_in" type="radio" value="cm">Centimeter
+            <input name="unit_in" type="radio" value="m">Meters
+            <input name="unit_in" type="radio" value="km">Kilometers
+
+        </div>
+
+        <div id="out_unit">
+            <h3>Enter the unit of measurement to the distance to:</h3>
+            <input name="unit_out" type="radio" value="ft" checked>Feet
+            <input name="unit_out" type="radio" value="mi">Miles
+            <input name="unit_out" type="radio" value="yd">Yards
+            <input name="unit_out" type="radio" value="inch">Inches
+            <input name="unit_out" type="radio" value="cm">Centimeter
+            <input name="unit_out" type="radio" value="m">Meters
+            <input name="unit_out" type="radio" value="km">Kilometers
+        </div>
+
+        <div class="submit_btn">
+            <button id="unit_out_btn" class="unit_out_btn">click to submit</button>
+        </div>
+
+        <div id="writing_space" class="writing_space"></div>
+    </div>
+
+    <script>
+
+        function find_selected_radiobutton(name) { //loops through the input radio buttons and finds the checked button returns the subscribed value.
+            let bts = document.getElementsByName(name);
+            for (let i=0; i<bts.length; ++i) {
+                if (bts[i].checked) {
+                    return bts[i].value;
+                }
+            }
+        }
+
+        let writingSpace = document.getElementById('writing_space');
+        let unit_out_btn = document.getElementById('unit_out_btn');
+
+        unit_out_btn.onclick = function() {
+            let unit_in = find_selected_radiobutton('unit_in');
+            let unit_out = find_selected_radiobutton('unit_out');
+            let distance_in = the_distance.value;
+//            alert(unit_in); //alerts to check this code
+//            alert(unit_out);
+//            alert(distance_in);
+            let meter_convert = {ft: 0.3048, mi: 1609.34, m: 1, km: 1000, yd: 0.9144, inch: 0.254, cm: 100};
+
+            let distance_convert = ((meter_convert[unit_out] * distance_in) / meter_convert[unit_in]);//need to redo the math, it is wrong
+            writingSpace.innerText = 'The converted distance of: ' + distance_in + unit_in + ' is ' + distance_convert + unit_out;
+
+        }
+        </script>
 
 </body>
 </html>
