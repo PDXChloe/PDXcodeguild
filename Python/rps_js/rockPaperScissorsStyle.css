@@ -12,7 +12,7 @@ body {
     padding: 2em;
     margin: 0 auto;
     width: 500px;
-    height: 500px;
+    height: 600px;
 }
 
 .push_btn {
@@ -28,4 +28,9 @@ body {
 
 .info {
     padding: 1em;
+}
+
+.computer_area {
+    color: ghostwhite;
+
 }
