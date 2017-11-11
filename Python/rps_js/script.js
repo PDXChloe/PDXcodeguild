@@ -3,6 +3,7 @@
 // let text = document.getElementById('choice');
 let output = document.getElementById('output');
 let play = document.getElementById('push_btn');
+let computer_area = document.getElementById('computer_area');
 // let submit = document.getElementById('play_btn');
 play.onclick = show_name;
 
@@ -30,7 +31,7 @@ function prs_game() {
     let name = name_in.value;
     let player = choice.value;
 
-    output.innerText = 'I choose ' + computerChoice;
+    computer_area.innerText = 'I choose ' + computerChoice;
 
     if (computerChoice === player) {
         output.innerText = 'Argh, we both win...';
