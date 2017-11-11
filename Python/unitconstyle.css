@@ -1,7 +1,7 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
-    background-color: dimgrey;
+    background-color: darkgrey;
     width: 100%
 
 }
@@ -10,15 +10,18 @@ h1 {
     font-size: 4em;
     text-transform: uppercase;
     letter-spacing: -2.5px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0;
     margin-bottom: 0;
+    color: #ffffff;
+
 }
 
 header h3 {
     margin-top: 0;
     margin-bottom: 3em;
     letter-spacing: .5em;
+    color: #fff;
 }
 
 header {
@@ -29,7 +32,7 @@ header {
 .wrapper {
 
     margin: 3em auto;
-    background-color: coral;
+    background-image: url("rivets.jpg");
     width: 600px;
     height: 600px;
     -webkit-border-radius: 20%;
@@ -37,6 +40,10 @@ header {
     border-radius: 20%;
     padding: 50px;
     box-shadow: 0 15px 25px rgba(50,50,50,.95);
+}
+
+.wrapper:hover {
+    box-shadow: 0 10px 20px rgba(242,242,242,.95);
 }
 
 .the_what {
@@ -65,12 +72,19 @@ header {
 }
 
 .unit_out_btn {
+    width: 10em;
     background-color: #ffeb99;
     border: .2em solid dimgrey;
-    box-shadow: 0 2px 5px rgba(50,50,50,.95);
-
+    box-shadow: 0 2px 5px rgba(50, 50, 50, .95);
+    transition: linear;
+    transition-duration: .35s;
 }
 
+
+.unit_out_btn:hover {
+    box-shadow: 0 10px 20px rgba(242,242,242,.95);
+    width: 15em;
+}
 
 
 .writing_space{
@@ -84,5 +98,10 @@ header {
     font-size: 2em;
     box-shadow: 0 5px 10px rgba(50,50,50,.95);
 
+
+}
+
+.writing_space:hover {
+    box-shadow: 0 10px 20px rgba(242,242,242,.95);
 
 }
