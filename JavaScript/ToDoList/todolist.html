@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>To Do List</title>
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="todolist.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
@@ -12,56 +12,92 @@
     <main id="wrapper" class="wrapper">
 
         <header id="header" class="header">
-            <h1>What I Need To Do:</h1>
+            <h1>To Do List:</h1>
         </header>
 
         <div id="to_do" class="to_do">
             <input name="to_do_info" id="to_do_info" class="to_do_info" type="text" placeholder="type item here!"/>
             <button id="add_btn" class="add_btn">add task</button>
         </div>
+        <hr/>
 
         <div id="todo_wrapper" class="todo_wrapper">
-            <ul id="todo_list" class="todo_list"></ul>
+            <!--<ul id="todo_list" class="todo_list"></ul>-->
+            <table id="todo_table" >
+                <tr class="table_header">
+                    <th>Done</th>
+                    <th>Task to be completed......</th>
+                    <th>Delete</th>
+                </tr>
+
+
+            </table>
         </div>
 
     </main>
        <script>
            let to_do_info = document.getElementById("to_do_info");
            let add_btn = document.getElementById("add_btn");
-           let todo_list = document.getElementById("todo_list");
+//           let todo_list = document.getElementById("todo_list");
 
            add_btn.onclick = function() {
-               let newEl = document.createElement('li');
-               let box = document.createElement('span');
-               let box_txt = document.createTextNode("☐");
-               box.appendChild(box_txt);
+//               let newEl = document.createElement('li');
+//               let box = document.createElement('span');
+//               let box_txt = document.createTextNode("☐");
+//               box.appendChild(box_txt);
+//
+//               newEl.appendChild(box);
+//               let newText = document.createTextNode(to_do_info.value);
+//               newEl.appendChild(newText);
+//               todo_list.appendChild(newEl);
+//
+//
+//               box.onclick = function() {
+//                   box_txt.remove();
+//                   let check_txt = document.createTextNode('☑');
+//                   box.appendChild(check_txt);
+////                   document.getElementById('todo_list').style.textDecoration = "line-through";
+//                   document.to_do_info.style.color = "rgba(255,255,255,.50)"; //this no work!!!!!
+//               };
+//
+//               let checkbox = document.createElement('span');
+//               let checkbox_txt = document.createTextNode("☒");
+//               checkbox.appendChild(checkbox_txt);
+//
+//               checkbox.onclick = function() {
+//                   //newEl.remove();
+//                   this.parentElement.remove();
+//               };
+//
+//               newEl.appendChild(checkbox);
 
-               newEl.appendChild(box);
-               let newText = document.createTextNode(to_do_info.value);
-               newEl.appendChild(newText);
-               todo_list.appendChild(newEl);
+//               for the table option:
 
-               box.onclick = function() {
-                   box_txt.remove();
-                   let check_txt = document.createTextNode('☑');
-                   box.appendChild(check_txt);
-//                   document.getElementById('todo_list').style.textDecoration = "line-through";
-                   document.to_do_info.style.color = "rgba(255,255,255,.50)"; //this no work!!!!!
-               };
+               let todo_table = document.querySelector('#todo_table');
+               let tr = document.createElement('tr');
+               let td_done = document.createElement('td');
+               td_done.innerText = "☐";
+               td_done.style.fontSize = 'xx-large';
+               td_done.addEventListener('click', function () {
+                   this.innerText = '☑';
+                   td_task.style.textDecoration = 'line-through';
+               });
 
-               let checkbox = document.createElement('span');
-               let checkbox_txt = document.createTextNode("☒");
-               checkbox.appendChild(checkbox_txt);
+               let td_task = document.createElement('td');
+               td_task.innerText = to_do_info.value;
 
-               checkbox.onclick = function() {
-                   //newEl.remove();
+               let td_remove = document.createElement('td');
+               td_remove.innerText = "☒";
+               td_remove.style.fontSize = 'xx-large';
+               td_remove.addEventListener('click', function () {
                    this.parentElement.remove();
-               };
+               });
 
-               newEl.appendChild(checkbox);
-
+               tr.appendChild(td_done);
+               tr.appendChild(td_task);
+               tr.appendChild(td_remove);
+               todo_table.appendChild(tr);
            };
-
 
 
 //
