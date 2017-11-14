@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="todolist.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main id="wrapper" class="wrapper">
+
+        <header id="header" class="header">
+            <h1>What I Need To Do:</h1>
+        </header>
+
+        <div id="to_do" class="to_do">
+            <input name="to_do_info" id="to_do_info" class="to_do_info" type="text" placeholder="type item here!"/>
+            <button id="add_btn" class="add_btn">add task</button>
+        </div>
+
+        <div id="todo_wrapper" class="todo_wrapper">
+            <ul id="todo_list" class="todo_list"></ul>
+        </div>
+
+    </main>
+       <script>
+           let to_do_info = document.getElementById("to_do_info");
+           let add_btn = document.getElementById("add_btn");
+           let todo_list = document.getElementById("todo_list");
+
+           add_btn.onclick = function() {
+               let newEl = document.createElement('li');
+               let box = document.createElement('h3');
+               let box_txt = document.createTextNode('࢈');
+               box.appendChild(box_txt);
+               box.onclick = function() {
+                   box_txt.remove();
+                   let check_txt = document.createTextNode('✔');
+                   box.appendChild(check_txt);
+               };
+
+               newEl.appendChild(box);
+               let newText = document.createTextNode(to_do_info.value);
+               newEl.appendChild(newText);
+               todo_list.appendChild(newEl);
+
+               let checkbox = document.createElement('h3');
+               let checkbox_txt = document.createTextNode("\u00D7");
+               checkbox.appendChild(checkbox_txt);
+               checkbox.onclick = function() {
+                   //newEl.remove();
+                   this.parentElement.remove();
+               };
+
+               newEl.appendChild(checkbox);
+
+           };
+
+
+
+//
+
+
+
+       </script>
+
+</body>
+</html>
