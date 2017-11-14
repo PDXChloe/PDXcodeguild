@@ -32,23 +32,27 @@
 
            add_btn.onclick = function() {
                let newEl = document.createElement('li');
-               let box = document.createElement('h3');
-               let box_txt = document.createTextNode('࢈');
+               let box = document.createElement('span');
+               let box_txt = document.createTextNode("☐");
                box.appendChild(box_txt);
-               box.onclick = function() {
-                   box_txt.remove();
-                   let check_txt = document.createTextNode('✔');
-                   box.appendChild(check_txt);
-               };
 
                newEl.appendChild(box);
                let newText = document.createTextNode(to_do_info.value);
                newEl.appendChild(newText);
                todo_list.appendChild(newEl);
 
-               let checkbox = document.createElement('h3');
-               let checkbox_txt = document.createTextNode("\u00D7");
+               box.onclick = function() {
+                   box_txt.remove();
+                   let check_txt = document.createTextNode('☑');
+                   box.appendChild(check_txt);
+//                   document.getElementById('todo_list').style.textDecoration = "line-through";
+                   document.to_do_info.style.color = "rgba(255,255,255,.50)"; //this no work!!!!!
+               };
+
+               let checkbox = document.createElement('span');
+               let checkbox_txt = document.createTextNode("☒");
                checkbox.appendChild(checkbox_txt);
+
                checkbox.onclick = function() {
                    //newEl.remove();
                    this.parentElement.remove();
