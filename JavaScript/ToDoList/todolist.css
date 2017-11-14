@@ -30,14 +30,11 @@ h1 {
     font-size: 4em;
 }
 
-h3 {
-    font-size: 2em;
-}
-
 button {
     width: 2em;
     height: 2em;
 }
+
 .to_do {
     display: flex;
     flex-direction: row;
@@ -56,7 +53,31 @@ button {
 
 }
 
-.todo_wrapper {
-
+.todo_list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 
 }
+
+li {
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+
+}
+
+span {
+    font-size: 1em;
+    color: #696969;
+}
+
+li:hover {
+    background-color: rgba(255,255,255,.50);
+}
+
+span:hover {
+    background-color: #ccff99;
+    color: rgba(255,255,255,.50);
+}
+
