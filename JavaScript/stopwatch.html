@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            body {
+                background-color: black;
+            }
+
+            .wrapper {
+                background-image: url("randomblackwhite.jpg");
+                background-color: black;
+                color: white;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 100px;
+                margin-right: auto;
+                margin-left: auto;
+                width: 700px;
+                height: 700px;
+                border-radius: 50%;
+                border: 2px groove white;
+                position: relative;
+            }
+
+            .clock_demo {
+                position: absolute;
+                top: 35%;
+                left: 15%;
+            }
+
+            .start_btn {
+                color: white;
+                background-color: rgba(50,50,50,.50);
+                position: absolute;
+                top: 60%;
+                left: 15%;
+                padding: 10px;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+
+            .start_btn:hover {
+                background-color: rgba(225, 225, 225, .25);
+
+            }
+
+            .stop_btn {
+                color: white;
+                background-color: rgba(50,50,50,.50);
+                position: absolute;
+                top: 60%;
+                left: 45%;
+                padding: 10px;
+                font-size: 20px;
+                text-transform: uppercase;
+
+            }
+
+            .stop_btn:hover {
+                background-color: rgba(225, 225, 225, .25);
+
+            }
+
+            .clock {
+                color: white;
+                background-color: rgba(50,50,50,.50);
+                position: absolute;
+                top: 60%;
+                left: 75%;
+                padding: 10px;
+                font-size: 20px;
+                text-transform: uppercase;
+
+            }
+            .clock:hover {
+                background-color: rgba(225, 225, 225, .25);
+
+            }
+
+
+
+
+    </style>
+</head>
+    <body>
+        <div class="wrapper">
+            <div id="clock_demo" class="clock_demo"></div>
+            <button id="clock" class="clock">Clock</button>
+            <button id="start_btn" class="start_btn">Start Stopwatch</button>
+            <button id="stop_btn" class="stop_btn">Stop Stopwatch</button>
+            <!--<button id="reset_btn" class="reset_btn">Reset</button>-->
+
+        </div>
+
+        <script>
+            // clock stuff
+            let clock_interval = 0;
+            let clock_demo = document.getElementById('clock_demo');
+            let clock = document.getElementById('clock');
+
+            clock.addEventListener('click', function() {
+                clearInterval(clock_interval);
+                setInterval(clock_interval);
+
+                clock_interval = setInterval(function() {
+                    let date = new Date();
+                    clock_demo.innerText = date.toLocaleTimeString();
+
+                }, 1000)
+                //clock_demo.innerText = date.getFullYear()+':'+(date.getMonth()+1) + ':' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()+':'+date.getSeconds();
+            });
+
+            // stopwatch stuff
+            let start_btn = document.getElementById("start_btn");
+            let stop_btn = document.getElementById("stop_btn");
+            let stopwatch_date = new Date();
+
+
+            let stopwatch_interval = 0;
+            start_btn.addEventListener('click', function() {
+                clearInterval(clock_interval);
+                stopwatch_date.setHours(0,0,0,0);
+                stopwatch_interval = setInterval(function (){
+                    let seconds= stopwatch_date.getSeconds();
+                    stopwatch_date.setSeconds(seconds + 1);
+                    clock_demo.innerText = stopwatch_date.getHours() + ':' + stopwatch_date.getMinutes() + ':' + stopwatch_date.getSeconds();
+                }, 1000);
+            });
+
+            stop_btn.addEventListener('click', function() {
+                clearInterval(stopwatch_interval);
+            });
+
+
+
+        </script>
+
+    </body>
+</html>
