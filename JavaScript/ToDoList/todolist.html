@@ -77,6 +77,7 @@
                let tr = document.createElement('tr');
                let td_done = document.createElement('td');
                td_done.innerText = "☐";
+               td_done.style.cursor = 'default';
                td_done.style.fontSize = 'xx-large';
                td_done.addEventListener('click', function () {
                    this.innerText = '☑';
@@ -89,6 +90,7 @@
                let td_remove = document.createElement('td');
                td_remove.innerText = "☒";
                td_remove.style.fontSize = 'xx-large';
+               td_remove.style.cursor = 'default';
                td_remove.addEventListener('click', function () {
                    this.parentElement.remove();
                });
