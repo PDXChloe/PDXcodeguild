@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watch</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            body {
+                /*background-image: url("lights.jpg");*/
+            }
+
+            .wrapper {
+                /*background-image: url("lights.jpg");*/
+                background-color: black;
+                border: 5px black groove;
+                color: white;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 100px;
+                margin-right: auto;
+                margin-left: auto;
+                width: 700px;
+                height: 700px;
+                border-radius: 50%;
+                position: relative;
+            }
+
+            .clock_demo {
+                position: absolute;
+                top: 40%;
+                left: 15%;
+            }
+
+
+    </style>
+</head>
+    <body>
+        <div class="wrapper">
+            <div id="clock_demo" class="clock_demo"></div>
+        </div>
+
+        <script>
+            let clock = setInterval(myTimer, 1000);
+
+            function myTimer() {
+            let date = new Date();
+            document.getElementById("clock_demo").innerHTML = date.toLocaleTimeString();
+
+            }
+
+
+        </script>
+
+    </body>
+</html>
