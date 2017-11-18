@@ -8,78 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
             body {
-                background-color: black;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+
+                background-color: white;
+                color: #777777;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 400;
             }
 
             .wrapper {
-                background-image: url("randomblackwhite.jpg");
-                background-color: black;
-                color: white;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                font-size: 100px;
-                margin-right: auto;
-                margin-left: auto;
-                width: 700px;
-                height: 700px;
-                border-radius: 50%;
-                border: 2px groove white;
                 position: relative;
+                padding: 30px;
+                background-image: linear-gradient(to right bottom,
+                rgba(209, 208, 213, 0.7),
+                rgba(1, 78, 180, 0.7)),url('full-background-netarts2.png');
+                height: 95vh;
+                background-size: cover;
+                background-position: top;
+                clip-path: polygon(0 25vh, 100% 0 , 100% 75vh, 0 100%);
+
+            }
+
+            .button-box {
+                position: absolute;
+                top: 55%;
+                left: 40%;
+
             }
 
             .clock_demo {
                 position: absolute;
-                top: 35%;
-                left: 15%;
-            }
-
-            .start_btn {
+                top: 30%;
+                left: 40%;
+                font-size: 100px;
                 color: white;
-                background-color: rgba(50,50,50,.50);
-                position: absolute;
-                top: 60%;
-                left: 15%;
-                padding: 10px;
-                font-size: 20px;
-                text-transform: uppercase;
             }
 
-            .start_btn:hover {
-                background-color: rgba(225, 225, 225, .25);
-
-            }
-
-            .stop_btn {
-                color: white;
-                background-color: rgba(50,50,50,.50);
-                position: absolute;
-                top: 60%;
-                left: 45%;
-                padding: 10px;
-                font-size: 20px;
-                text-transform: uppercase;
-
-            }
-
-            .stop_btn:hover {
-                background-color: rgba(225, 225, 225, .25);
-
-            }
-
-            .clock {
-                color: white;
-                background-color: rgba(50,50,50,.50);
-                position: absolute;
-                top: 60%;
-                left: 75%;
-                padding: 10px;
-                font-size: 20px;
-                text-transform: uppercase;
-
-            }
-            .clock:hover {
-                background-color: rgba(225, 225, 225, .25);
-
-            }
 
 
 
@@ -89,10 +55,13 @@
     <body>
         <div class="wrapper">
             <div id="clock_demo" class="clock_demo"></div>
-            <button id="clock" class="clock">Clock</button>
-            <button id="start_btn" class="start_btn">Start Stopwatch</button>
-            <button id="stop_btn" class="stop_btn">Stop Stopwatch</button>
-            <!--<button id="reset_btn" class="reset_btn">Reset</button>-->
+
+
+            <div class="button-box">
+                <button id="clock" class="clock btn">Clock</button>
+                <button id="start_btn" class="start_btn btn">Start Stopwatch</button>
+                <button id="stop_btn" class="stop_btn btn">Stop Stopwatch</button>
+            </div>
 
         </div>
 
