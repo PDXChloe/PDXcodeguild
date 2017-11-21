@@ -25,9 +25,9 @@ clock.addEventListener('click', function() {
         // date = new Date(2017, 11, 20, 15, 0, 0, 0);
         // date = new Date(2017, 11, 20, 16, 0, 0, 0);
         // date = new Date(2017, 11, 20, 17, 0, 0, 0);
-        date = new Date(2017, 11, 20, 18, 0, 0, 0);
+        // date = new Date(2017, 11, 20, 18, 0, 0, 0);
         // date = new Date(2017, 11, 20, 21, 0, 0, 0);
-        // date = new Date();
+        date = new Date();
         clock_demo.innerText = date.toLocaleTimeString();
 
         let greetingBox = document.getElementById('greeting_box');
@@ -48,19 +48,16 @@ clock.addEventListener('click', function() {
         // let current_minutes = date.getMinutes();
 
         if (current_hours >= wakeUpTime) {
-            let pic1 = 'linear-gradient(to right bottom,' + 'rgba(255, 153, 51, 0.7),' +
+          wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 153, 51, 0.7),' +
                 'rgba(1, 78, 180, 0.7)), url("sunrisewindow.jpg")';
             clock_demo.style.animation = wrapper_animate_directions;
-            wrapper.style.backgroundImage = pic1;
             greeting.innerText = 'Wakey!!! Wakey!!!';
             greetingBox.style.animation = animate_directions;
         }
 
         if (current_hours >= coffeeTime) {
-            let pic2 = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 0, 0.7),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 0, 0.7),' +
                 'rgba(1, 78, 180, 0.7)), url("full-background-netarts2.png")';
-            // greeting.style.animation = 'moveInLeft 5s ease-out';
-            wrapper.style.backgroundImage = pic2;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'Coffee, NOW!!!!';
             greetingBox.style.animation = animate_directions;
@@ -70,18 +67,16 @@ clock.addEventListener('click', function() {
         }
 
         if (current_hours >= almostLunchTime) {
-            let pic3 = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 51, 0.7),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 51, 0.7),' +
                 'rgba(204, 255, 255, 0.7)), url("sunrisewindow.jpg")';
-            wrapper.style.backgroundImage = pic3;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = "Is it Lunch Time yet?";
             greetingBox.style.animation = animate_directions;
         }
 
         if (current_hours >= lunchTime) {
-            let pic4 = 'linear-gradient(to right bottom,' + 'rgba(255, 51, 51, 0.7),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 51, 51, 0.7),' +
                 'rgba(204, 255, 255, 0.7)), url("lemons.jpg")';
-            wrapper.style.backgroundImage = pic4;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'So Hangry! Let\'s Do lunch!';
             greetingBox.style.animation = animate_directions;
@@ -91,9 +86,8 @@ clock.addEventListener('click', function() {
         }
 
         if (current_hours >= napTime) {
-            let pic5 = 'linear-gradient(to right bottom,' + 'rgba(0,0,0, 0.8),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(0,0,0, 0.8),' +
                 'rgba(255, 51, 51, 0.5)), url("skytrees.jpg")';
-            wrapper.style.backgroundImage = pic5;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'Is it Naptime yet?!';
             greetingBox.style.animation = animate_directions;
@@ -103,18 +97,16 @@ clock.addEventListener('click', function() {
         }
 
         if (current_hours >= cookieTime) {
-            let pic6 = 'linear-gradient(to right bottom,' + 'rgba(255, 153, 51, 0.8),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 153, 51, 0.8),' +
                 'rgba(51, 26, 0, 0.6)), url("cookietime.jpg")';
-            wrapper.style.backgroundImage = pic6;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'Where are the cookies?!';
             greetingBox.style.animation = animate_directions;
         }
 
         if (current_hours >= quitingTime) {
-            let pic7 = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 255, 0.8),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(255, 255, 255, 0.8),' +
                 'rgba(51, 26, 0, 0.6)), url("quittime.jpg")';
-            wrapper.style.backgroundImage = pic7;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'What a great day!';
             greetingBox.style.animation = animate_directions;
@@ -122,18 +114,16 @@ clock.addEventListener('click', function() {
         }
 
         if (current_hours >= dinnerTime) {
-            let pic8 = 'linear-gradient(to right bottom,' + 'rgba(0, 0, 0, 0.5),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(0, 0, 0, 0.5),' +
                 'rgba(128, 0, 0, 0.8)), url("cookingbooks.jpg")';
-            wrapper.style.backgroundImage = pic8;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'Time to dine...';
             greetingBox.style.animation = animate_directions;
 
         }
         if (current_hours >= sleepyTime) {
-            let pic9 = 'linear-gradient(to right bottom,' + 'rgba(242, 242, 242, 0.1),' +
+            wrapper.style.backgroundImage = 'linear-gradient(to right bottom,' + 'rgba(242, 242, 242, 0.1),' +
                 'rgba(0, 0, 0, 0.9)), url("full-background-netarts2.png")';
-            wrapper.style.backgroundImage = pic9;
             clock_demo.style.animation = wrapper_animate_directions;
             greeting.innerText = 'Shhhhh.....Snooozing!';
             greeting.style.color = 'yellow';
