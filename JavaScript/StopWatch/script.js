@@ -18,7 +18,7 @@ let date = null;
 clock.addEventListener('click', function() {
     clearInterval(clock_interval);
     clock_interval = setInterval(function() {
-        // date = new Date(2017, 11, 20, 7, 0, 0, 0);
+        date = new Date(2017, 11, 20, 7, 0, 0, 0);
         // date = new Date(2017, 11, 20, 8, 0, 0, 0);
         // date = new Date(2017, 11, 20, 11, 0, 0, 0);
         // date = new Date(2017, 11, 20, 12, 0, 0, 0);
