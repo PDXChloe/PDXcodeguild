@@ -15,10 +15,11 @@ let date = null;
 // }
 
 
+
 clock.addEventListener('click', function() {
     clearInterval(clock_interval);
     clock_interval = setInterval(function() {
-        date = new Date(2017, 11, 20, 7, 0, 0, 0);
+        // date = new Date(2017, 11, 20, 7, 0, 0, 0);
         // date = new Date(2017, 11, 20, 8, 0, 0, 0);
         // date = new Date(2017, 11, 20, 11, 0, 0, 0);
         // date = new Date(2017, 11, 20, 12, 0, 0, 0);
@@ -149,12 +150,30 @@ start_btn.addEventListener('click', function() {
         let seconds = stopwatch_date.getSeconds();
         stopwatch_date.setSeconds(seconds + 1);
         clock_demo.innerText = stopwatch_date.getHours() + ':' + stopwatch_date.getMinutes() + ':' + stopwatch_date.getSeconds();
+        
     }, 1000);
 });
 
 stop_btn.addEventListener('click', function() {
     clearInterval(stopwatch_interval);
 });
+
+start_btn.addEventListener('mouseover', function(){
+    start_btn.innerText = "Start Stopwatch";
+});
+
+start_btn.addEventListener('mouseout', function(){
+    start_btn.innerText = "START";
+});
+
+stop_btn.addEventListener('mouseover', function(){
+    stop_btn.innerText = 'Stop Stopwatch';
+});
+
+stop_btn.addEventListener('mouseout', function() {
+    stop_btn.innerText = "STOP";
+});
+
 
 
 

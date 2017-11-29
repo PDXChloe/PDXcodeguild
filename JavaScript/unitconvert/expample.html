@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A script on this page starts this clock:</p>
+
+<p id="demo"></p>
+
+<button onclick="clearInterval(myVar)" id="stop_btn">Stop time</button>
+<button onclick="myTimer(myVar)">Start time</button>
+
+<script>
+let myVar = setInterval(myTimer ,1000);
+function myTimer() {
+    let date = new Date();
+    document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+}
+</script>
+
+</body>
+</html>

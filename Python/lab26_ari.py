@@ -21,7 +21,8 @@ print("word count is: " + str(word_count))
 
 char_count = 0
 for char in c_r:
-    char_count += 1
+    if char in 'abcdefghijklmnopqrstuvwxyz':
+        char_count += 1
 print("character count is: " + str(char_count))
 
 def ari_score(c, w, sen):

@@ -1,7 +1,7 @@
 import random
 import time
 
-width = 10  # the width of the board
+width = 30  # the width of the board
 height = 10  # the height of the board
 player_points = 0
 # create a board with the given width and height
@@ -35,6 +35,7 @@ while True:
     if command == 'done':
         break  # exit the game
     elif command == 'left' or command == 'l':
+        # only move them left if they're not on the left side
         player_j -= 1  # move left
     elif command == 'right' or command == 'r':
         player_j += 1  # move right

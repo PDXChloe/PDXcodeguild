@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoticons</title>
+    <script>
+        function random_element(array) {
+            let random_index = Math.floor(Math.random()*answers.length);
+            return array[random_index];
+        }
+            let eyebrows_list = ['>', '|', ''];
+            let eyes_list = [':', ';', '='];
+            let noses_list = ['', '-', '\'', '^', 'o'];
+            let mouths_list = [')', '(', 'D', '&', 'P', 'Q'];
+
+            for (let i=0; i<3; ++i) {
+                let eyebrows = random_element(eyebrows_list);
+                let eyes = random_element(eyes_list);
+                let nose = random_element(noses_list);
+                let mouth = random_element(mouths_list);
+
+            }
+
+            alert(eyebrows + eyes + nose + mouth);
+
+    </script>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+</body>
+</html>

@@ -18,6 +18,7 @@ for num in nums:
 print(other_nums)
 
 
+
 # while i in range(len(nums)):
 #     if i%2 == 0:
 #         other_nums.append(num)

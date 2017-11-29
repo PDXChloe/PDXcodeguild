@@ -46,7 +46,10 @@ import time
 
 answers = ["Mission Impossible", "I don't think so!", "Yeah, Not gonna happen", "In your dreams", "Nope", "Nada", "I wish I knew the answer",
            "In another life, this could be a possibility for you", "I just don't see it happening for you, maybe for your friend",
-           "One day but, not today", "Could you look up the possibility?", "Google it, cuz I don't have a flippin clue!"]
+           "One day but, not today", "Could you look up the possibility?", "Google it, cuz I don't have a flippin clue!", "If only..."
+           "Didn't this happen for your best friend?", "Maybe it will happen if you believe really really hard.... lol", "I feel like this could not even be close to a possibility for you",
+           "That happened for me once, it was super fun, you would be so happy if this happened for you."]
+
 
 print("Welcome to Magic 8 Ball, where all your answers to all your life questions are!\n")
 time.sleep(1)

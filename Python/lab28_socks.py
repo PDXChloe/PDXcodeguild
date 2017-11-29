@@ -30,7 +30,7 @@ for sock in sock_pairs:
     if amt_pairs%1 == 0:
         print(f'There are {int(amt_pairs)} pairs of {sock} socks')
     else:
-        print(f'There are {int(amt_pairs)} pairs and there is one loner {sock} sock')
+        print(f'There are {int(amt_pairs)} pairs and one loner {sock} sock')
 
 #do version 2
 

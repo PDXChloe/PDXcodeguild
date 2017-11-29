@@ -1,20 +1,23 @@
 import random
+import time
 
-width = 10  # the width of the board
-height = 10  # the height of the board
+def display_board():
+    width = 10  # the width of the board
+    height = 10  # the height of the board
 
-# create a board with the given width and height
-# we'll use a list of list to represent the board
-board = []  # start with an empty list
-for i in range(height):  # loop over the rows
-    board.append([])  # append an empty row
-    for j in range(width):  # loop over the columns
-        board[i].append(' ')  # append an empty space to the board
+    # create a board with the given width and height
+    # we'll use a list of list to represent the board
+    board = []  # start with an empty list
+    for i in range(height):  # loop over the rows
+        board.append([])  # append an empty row
+        for j in range(width):  # loop over the columns
+            board[i].append(' ')  # append an empty space to the board
 
-# define the player position
-player_i = 4
-player_j = 4
-player_score = 0
+def player_position():
+    # define the player position
+    player_i = 4
+    player_j = 4
+    player_score = 0
 
 # add 4 enemies in random locations
 for i in range(4):
@@ -27,6 +30,14 @@ for i in range(6):
     enemy_j = random.randint(0, width - 1)
     board[enemy_i][enemy_j] = '@'
 
+
+def choose_door():
+    door = ''
+    while door != '1' and door != '2':
+        print('Which door will you go choose? (1 or 2)')
+        door = input()
+
+    return door
 
 # loop until the user says 'done' or dies
 while True:
@@ -50,41 +61,36 @@ while True:
         print('You\'ve encountered a trickster fairy, you also see three fairy doors,')
         print('"Pick a door" says the fairy, "One will lead to fortune, and two will lead to your doom"')
         print('')
-        action = input('what will you do? Will you pick door 1, 2 or 3?')
-        if action == '1':
-            print('you\'ve slain the enemy')
-            board[player_i][player_j] = ' '  # remove the enemy from the board
-        else:
-            print('you hesitated and were slain')
-            break
+        action = choose_door()
+        # if action == '1':
+        #     print('you\'ve slain the enemy')
+        #     board[player_i][player_j] = ' '  # remove the enemy from the board
+        # else:
+        #     print('you hesitated and were slain')
+        #     break
 
 
-    def choose_door():
-        door = ''
-        while door != '1' and door != '2' and door != '3':
-            print('Which door will you go choose? (1 or 2 or 3)')
-            door = input()
-
-        return door
+def check_door(choose_door):
+    print('You have choosen door ' + door + '.')
+    time.sleep(1)
+    print('and........')
+    time.sleep(2)
 
 
-    def check_door(choose_door):
-        print('You have choosen door ' + door + '.')
-        time.sleep(1)
-        print('and........')
+    treasure_door = random.randint(1, 3)
+
+    if choose_door == str(treasure_door):
+        player_score += 20
+        print("You have chosen wisely and you will be rewarded, 20points")
+        print("You now have: " + player_score)
+    else:
         time.sleep(2)
+        player_score -= 20
+        print("Grrrr behind the door is a hungry zombie and he takes a big chunk of your arm, you lose 20 points!")
+        print("You now have: " + player_score)
 
 
-        treasure_door = random.randint(1, 2)
 
-        if choose_door == str(treasure_door):
-            player_score += 20
-            print("You have chosen wisely and you will be rewarded, 20points")
-            print("You now have: " + player_score)
-        else:
-            time.sleep(2)
-            print("Grrrr behind the door is a hungry zombie and he takes a big chunk of your arm, you lose 20 points!")
-            print("You now have: " + player_score)
 
 
     if board[player_i][player_j] == '@':

@@ -8,7 +8,7 @@ class AtmAccount:
         #print("account balance: $" + str(balance))
 
     def check_balance(self):
-        return self.balance
+        return self.balance #used as checkpoint for
 
 
     def deposit(self, amount):

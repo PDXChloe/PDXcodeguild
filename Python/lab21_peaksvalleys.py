@@ -19,6 +19,7 @@ def find_peaks(data):#find the peaks
             peaks.append(i)
     #print("Data peaks indices: " + str(peaks))
     return peaks
+
 find_peaks(data)
 
 
