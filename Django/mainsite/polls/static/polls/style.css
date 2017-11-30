@@ -1,3 +1,4 @@
+
 li a {
     color: green;
 }
@@ -6,5 +7,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: transparent url("images/background.gif")
+    background: transparent url("images/background.gif");
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 40px;
+    color: rgba(128, 0, 0, .7);
+
+
+}
+
+.voteagain_btn {
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 3px 3px 3px rgba(255,255,255, .2);
+    font-size: 24px;
+
+}
+
+.voteagain_btn a {
+    text-decoration: none;
 }
