@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enter a long url</title>
+    <meta name="description" content="">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <style>
+        table {
+            margin-top: 20px;
+            border: 3px solid black;
+            padding: 5px;
+        }
+
+        th, td {
+            border: 2px solid darkgrey;
+            padding: 10px;
+        }
+
+        /*need to center container*/
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!--# one url that returns a page for entering in a url to be shortened, and possibly a list of entries-->
+    <div class="container">
+        <h1>I take your long URL's and make them bite sized!</h1>
+        <form action="{% url 'shorty:create' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="long_url" id="long_url" value="" placeholder="Copy your url here" />
+            <button type="submit">create short URL</button>
+        </form>
+
+        <table>
+            <thead>
+                <th>Short URL</th>
+                <th>Long URL</th>
+            </thead>
+        {% for short_url in short_urls %}
+            <tr>
+                <td>{{ short_url.short_url }}</td>
+                <td>{{ short_url.long_url }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+
+
+    </div>
+
+
+</body>
+</html>
