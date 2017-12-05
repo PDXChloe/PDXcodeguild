@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Books</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container" class="container">
+            <h1>Welcome to the Library</h1>
+            <div id="check_in" class="check_in">
+                <h2>Check in:</h2>
+                <form action="{% url 'libcard:create_lib_entry' %}" method="post">
+                    {% csrf_token %}
+                    <label for="title">Enter Title: </label>
+                    <input id="title" type="text" name="title" >
+
+                    <label for="publish_date">Enter Publishing Date: </label>
+                    <input id="publish_date" type="date" name="publish_date" placeholder="publish date here">
+
+                    <select name="author">
+                        {% for author in authors %}
+                        <option value="{{author.id}}">{{author.author}}</option>
+                        {% endfor %}
+                    </select>
+
+
+                    <!--<label for="author">Enter Author Name:</label>-->
+                    <!--<input id="author" type="text" name="author" placeholder="author name here">-->
+                    <button type="submit">Create Library Entry</button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+    </body>
+</html>
