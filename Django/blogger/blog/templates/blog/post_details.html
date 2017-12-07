@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog Post</title>
+        <meta name="description" content="Blog page with poster and commenter accounts in the user system">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog_style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+
+            <h1>My Fabulous Blog Page!</h1>
+
+        </header>
+        <article>
+            {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+
+            <p>
+                {{post.body}}
+            </p>
+            <h4>{{ post.timestamp }}</h4>
+            <h3>{{ post.user }}</h3>
+        </article>
+        {% endfor %}
+    </body>
+</html>
