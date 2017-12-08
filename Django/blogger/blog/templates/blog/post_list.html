@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog Post</title>
+        <meta name="description" content="Blog page with poster and commenter accounts in the user system">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog_style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+
+
+
+
+
+
+    <body>
+        <div class="container">
+            <header class="header">
+
+            <h1>My Fabulous Blog Page!</h1>
+
+            </header>
+            {% for post in posts %}
+            <article class="post_in_blog">
+
+                <h2 class="post_title">
+                    <a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a>
+                </h2>
+
+                <p class="post_body">
+                    {{ post.body }}
+                </p>
+                <div class="author_box">
+                    <h4 class="post_pub_date">{{ post.timestamp }}</h4>
+                    <h3 class="author">{{ post.user }}</h3>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+            <!--{% for comment in comments %}-->
+            <!--<div class="comment_wrapper">-->
+                <!--<div class="single_comment_box">-->
+                    <!--<h4 class="comment_header">Comments: </h4>-->
+                    <!--<p class="comment_body">-->
+                        <!--{{ comment.comment_text }}-->
+                    <!--</p>-->
+                    <!--<h4 class="commenter">{{ comment.commenter }}</h4>-->
+                    <!--<h4 class="date_posted">{{ comment.comment_text }}</h4>-->
+                <!--</div>-->
+                <!--{% endfor %}-->
+
+                <!--<label for="comment">Comments: </label>-->
+                <!--<input id="comment" type="text">-->
+
+            <!--</div>-->
+
+        <a href="{% url 'blog:user_logout' %}">Logout</a>
+
+
+        </div>
+
+    </body>
+</html>

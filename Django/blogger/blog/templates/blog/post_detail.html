@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Post Details</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog_style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="container">
+            <article class="post_in_blog_detail">
+
+                <h2 class="post_title_detail">{{ post.title }}</h2>
+
+                <p class="post_body">
+                    {{ post.body }}
+                </p>
+                <div class="author_box">
+                    <h4 class="post_pub_date">{{ post.timestamp }}</h4>
+                    <h3 class="author">{{ post.user }}</h3>
+
+                </div>
+
+            </article>
+        </div>
+        {% if user.is_authenticated == False %}
+
+
+            <aside class="comment_box">
+                <h4>We love your comments!</h4>
+                <h2 class="login">
+                    <a href="{% url 'blog:user_login' %}"> Please Login</a>
+                </h2>
+
+                <h2 class="register">
+                    <a href="{% url 'blog:register' %}"> Register</a>
+                </h2>
+
+
+                </div>
+
+            </aside>
+        {% else %}
+            <form action="" method="post">
+            </form>
+        {% endif %}
+
+
+
+
+
+    </body>
+
+</html>
